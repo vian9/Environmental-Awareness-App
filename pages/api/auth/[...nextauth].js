@@ -50,8 +50,7 @@ export default NextAuth({
 
           }
           if (!isValid) {
-            console.log(!isValid.error);
-            toast.error("Wrong Password");
+            console.log("Wrong Password")
             throw new Error("Wrong Password");
           } else {
             console.log(isValid);
