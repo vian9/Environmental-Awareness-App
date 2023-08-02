@@ -72,10 +72,10 @@ export async function getServerSideProps(context){
   })
   const scoreResult = await scoreResponse.json();
 //  console.log(scoreResult,"scoreResult")
-      
+  
       return {
         props:{
-          userData:data,
+          userData: data,
           scoreResult:scoreResult.data[0].result,
         }
       }
