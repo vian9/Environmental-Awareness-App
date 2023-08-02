@@ -59,20 +59,24 @@ export async function getServerSideProps(context){
       props: {},
     };
   }
-  // console.log(session)
+  console.log(session)
   var userMail = session.user.email
   const response = await  fetch(`http://localhost:3000/api/indivdata/${userMail}`,{
     method: 'GET'
   })
-  // console.log(response);
+  console.log(response);
   const data = await  response.json();
-  // console.log(data);
+   console.log(data);
   const scoreResponse = await fetch(`http://localhost:3000/api/getScore/${userMail}`,{
     method: 'GET'
   })
-  const scoreResult = await scoreResponse.json();
-//  console.log(scoreResult,"scoreResult")
   
+  console.log(scoreResponse);
+
+
+  const scoreResult = await scoreResponse.json();
+console.log(scoreResult,"scoreResult")
+
       return {
         props:{
           userData: data,
